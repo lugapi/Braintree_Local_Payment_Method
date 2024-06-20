@@ -1,0 +1,31 @@
+<div class="container mx-auto flex flex-col gap-4">
+    <div class="header w-full flex flex-col gap-2">
+        <h1 class="font-bold text-2xl">Braintree Local Payment Method</h1>
+        <p>Documentation : <a href="https://developer.paypal.com/braintree/docs/guides/local-payment-methods/overview"
+                target="_blank" class="underline text-blue-600 hover:text-blue-800">Braintree
+                Local Payment Method</a>
+        </p>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 p-2">
+        <div class="flex gap-4 apms">
+            <button id="blik-button" class="hover:opacity-80">
+                <img src="https://www.paypalobjects.com/images/checkout/latinum/Altpay_logo_blik.svg"
+                    class="payment-button" />
+            </button>
+            <!-- <button id="bancontact-button" class="hover:opacity-80">
+                <img src="https://www.paypalobjects.com/js-sdk-logos/2.2.7/bancontact-black.svg"
+                    class="payment-button" />
+            </button> -->
+        </div>
+    </div>
+    <div class="flex flex-col gap-4 results hidden">
+        <div class="paymentId">
+            <pre></pre>
+        </div>
+        <div class="nonce">
+            <pre></pre>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>

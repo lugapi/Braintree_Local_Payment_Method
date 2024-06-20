@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braintree</title>
+    <script src="commonFront.js"></script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Load the BT component. -->
+    <script src="https://js.braintreegateway.com/web/3.102.0/js/client.min.js"></script>
+    <script src="https://js.braintreegateway.com/web/3.102.0/js/local-payment.min.js"></script>
+</head>
+
+<body>
+    <div class="container mx-auto">
+        <ul class="m-4 text-sm font-medium text-center text-gray-500 rounded-lg shadow sm:flex">
+            <li class="w-full">
+                <a href="./lpm"
+                    class="inline-block w-full p-4 bg-white border-r border-gray-200 hover:text-gray-700 hover:bg-gray-200">Local
+                    Payment Method</a>
+            </li>
+            <li class="w-full">
+                <a href="./blikNoRedirection"
+                    class="inline-block w-full p-4 bg-white border-r border-gray-200 hover:text-gray-700 hover:bg-gray-200">BLIK
+                    (no redirection)</a>
+            </li>
+            <li class="w-full">
+                <a href="./webhook"
+                    class="inline-block w-full p-4 bg-white border-r border-gray-200 hover:text-gray-700 hover:bg-gray-200">Webhook
+                    Tester</a>
+            </li>
+        </ul>
+    </div>
+    <%- include(body) %>
+</body>
+
+<script>
+    const currency = '<%= currency %>'
+    const mid = '<%= MID %>'
+</script>
+
+<script src="commonFront.js"></script>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webhook Tester</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <div class="container flex flex-col mx-auto mt-10">
+
+        <div class="flex flex-col gap-2">
+            <h1 class="text-3xl font-bold">Webhook Tester</h1>
+            <p>Documentation : <a href="https://developer.paypal.com/braintree/docs/guides/webhooks/parse/node"
+                    target="_blank" class="underline text-blue-600 hover:text-blue-800">Braintree Webhook</a>
+            </p>
+        </div>
+
+        <div class="w-full bg-white p-8 rounded shadow-lg">
+            <form id="webhookForm" method="post" action="/webhooks" class="space-y-4">
+                <div>
+                    <label for="bt_signature" class="block text-sm font-medium text-gray-700">Webhook Content:</label>
+                    <input type="text" id="bt_webhook" name="bt_webhook"
+                        class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                        value="bt_signature=4kts2884c9cn6mnx%7Cb4c1dbaac73bb2f7fcd0c12e600b3e3fb89ce402%26jx5r7sr8bb9w99gx%7C517772aef1b4d81f27f70dc84c04bdeda595b74e%26n8d4m8vymgm5p4mz%7C1597b7fd105c86e8cf9326c55bf8bd1bbf1cb8a8%26rg3tbj3cc82n9fwr%7Cc44b14a83bd5bad6786e7937f22ee77cf9309a9e%26s84zsgzzt8q5g6t7%7C3953dc937a83bd417d0fe025d201d7356b084115%26tnnmdj2g6chdhg55%7C18313b3cb96c5cdce4d9bb1446346cf2c2ffbdd6&bt_payload=PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPG5vdGlm%0AaWNhdGlvbj4KICA8a2luZD5sb2NhbF9wYXltZW50X2NvbXBsZXRlZDwva2lu%0AZD4KICA8dGltZXN0YW1wIHR5cGU9ImRhdGV0aW1lIj4yMDI0LTA2LTIwVDA2%0AOjQzOjQ0WjwvdGltZXN0YW1wPgogIDxzdWJqZWN0PgogICAgPGxvY2FsLXBh%0AeW1lbnQ%2BCiAgICAgIDxwYXltZW50LWlkPjNCVTI2NDM2NzU0MDEyODIyPC9w%0AYXltZW50LWlkPgogICAgICA8cGF5bWVudC1tZXRob2Qtbm9uY2U%2BZTlkN2Vm%0AZTktZjBkOC0xNWY0LTFlMzgtNWM1NTc1YTRiZGRiPC9wYXltZW50LW1ldGhv%0AZC1ub25jZT4KICAgIDwvbG9jYWwtcGF5bWVudD4KICA8L3N1YmplY3Q%2BCjwv%0Abm90aWZpY2F0aW9uPgo%3D%0A"
+                        required><br><br>
+
+                </div>
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring focus:ring-blue-200 focus:ring-opacity-50">Submit
+                    Webhook</button>
+            </form>
+
+            <h2 class="mt-8 text-lg font-bold">Response</h2>
+            <pre id="responseContent" class="mt-4 p-4 bg-gray-200 rounded"></pre>
+        </div>
+    </div>
+    <script src="webhooks.js"></script>
+</body>
+
+</html>
