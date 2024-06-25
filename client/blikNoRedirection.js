@@ -1,14 +1,9 @@
+const numberFields = ['number1', 'number2', 'number3', 'number4', 'number5', 'number6'];
+
 document.getElementById('formBlik').addEventListener('submit', async function (e) {
     e.preventDefault(); // Empêcher la soumission par défaut du formulaire
 
-    const number1 = document.getElementById('number1').value;
-    const number2 = document.getElementById('number2').value;
-    const number3 = document.getElementById('number3').value;
-    const number4 = document.getElementById('number4').value;
-    const number5 = document.getElementById('number5').value;
-    const number6 = document.getElementById('number6').value;
-
-    const code = "" + number1 + number2 + number3 + number4 + number5 + number6;
+    const code = numberFields.map(fieldId => document.getElementById(fieldId).value).join('');
 
     console.log(code);
 
@@ -20,7 +15,6 @@ document.getElementById('formBlik').addEventListener('submit', async function (e
     }
 });
 
-
 // Fonction pour déplacer le focus vers le champ suivant
 function moveFocus(currentField, nextFieldId) {
     if (currentField.value.length === currentField.maxLength) {
@@ -29,24 +23,13 @@ function moveFocus(currentField, nextFieldId) {
 }
 
 // Ajouter un écouteur d'événement 'input' à chaque champ de saisie
-document.getElementById('number1').addEventListener('input', function () {
-    moveFocus(this, 'number2');
-});
-
-document.getElementById('number2').addEventListener('input', function () {
-    moveFocus(this, 'number3');
-});
-
-document.getElementById('number3').addEventListener('input', function () {
-    moveFocus(this, 'number4');
-});
-
-document.getElementById('number4').addEventListener('input', function () {
-    moveFocus(this, 'number5');
-});
-
-document.getElementById('number5').addEventListener('input', function () {
-    moveFocus(this, 'number6');
+numberFields.forEach((fieldId, index) => {
+    const nextFieldId = numberFields[index + 1];
+    document.getElementById(fieldId).addEventListener('input', function () {
+        if (nextFieldId) {
+            moveFocus(this, nextFieldId);
+        }
+    });
 });
 
 async function lpm() {
