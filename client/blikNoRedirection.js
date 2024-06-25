@@ -20,6 +20,35 @@ document.getElementById('formBlik').addEventListener('submit', async function (e
     }
 });
 
+
+// Fonction pour déplacer le focus vers le champ suivant
+function moveFocus(currentField, nextFieldId) {
+    if (currentField.value.length === currentField.maxLength) {
+        document.getElementById(nextFieldId).focus();
+    }
+}
+
+// Ajouter un écouteur d'événement 'input' à chaque champ de saisie
+document.getElementById('number1').addEventListener('input', function () {
+    moveFocus(this, 'number2');
+});
+
+document.getElementById('number2').addEventListener('input', function () {
+    moveFocus(this, 'number3');
+});
+
+document.getElementById('number3').addEventListener('input', function () {
+    moveFocus(this, 'number4');
+});
+
+document.getElementById('number4').addEventListener('input', function () {
+    moveFocus(this, 'number5');
+});
+
+document.getElementById('number5').addEventListener('input', function () {
+    moveFocus(this, 'number6');
+});
+
 async function lpm() {
     try {
         const clientTokenResponse = await fetch('./clientToken', {

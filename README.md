@@ -2,6 +2,10 @@
 
 Braintree documentation: [https://developer.paypal.com/braintree/docs/guides/local-payment-methods/overview](https://developer.paypal.com/braintree/docs/guides/local-payment-methods/overview)
 
+## Requirement
+
+In order to process Local Payment Method, webhoook integration is required.
+
 ## Installation
 
 1. Clone the repository
